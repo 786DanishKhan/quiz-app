@@ -1,0 +1,427 @@
+{
+  "day": 1,
+  "basic": [
+    {
+      "id": 1,
+      "question": "What is Spring Boot primarily used for?",
+      "options": ["Creating Android apps", "Quickly building Java applications with minimal configuration", "Writing SQL queries", "Building C++ applications"],
+      "answer": "B",
+      "explanation": "Spring Boot is designed to simplify the bootstrapping and development of new Spring applications with minimal configuration."
+    },
+    {
+      "id": 2,
+      "question": "Spring Boot comes with which built‑in server by default?",
+      "options": ["WebSphere", "Apache", "Tomcat", "GlassFish"],
+      "answer": "C",
+      "explanation": "Spring Boot comes with Tomcat as the default embedded server."
+    },
+    {
+      "id": 3,
+      "question": "Which annotation marks the main Spring Boot application class?",
+      "options": ["@RestController", "@SpringBootApplication", "@EnableAutoConfig", "@Bean"],
+      "answer": "B",
+      "explanation": "The @SpringBootApplication annotation is used to mark the main class of a Spring Boot application."
+    },
+    {
+      "id": 4,
+      "question": "Which annotation is used to create REST APIs?",
+      "options": ["@Repository", "@Service", "@RestController", "@Component"],
+      "answer": "C",
+      "explanation": "@RestController is a specialized version of the controller which includes @Controller and @ResponseBody annotations."
+    },
+    {
+      "id": 5,
+      "question": "What does Spring Boot's auto‑configuration do?",
+      "options": ["Manually configures all beans", "Automatically configures application based on dependencies", "Disables configuration", "Connects to databases automatically without settings"],
+      "answer": "B",
+      "explanation": "Auto-configuration automatically configures your Spring application based on the jar dependencies you have added."
+    },
+    {
+      "id": 6,
+      "question": "What does @GetMapping do?",
+      "options": ["Handles POST requests", "Handles GET requests", "Handles PUT requests", "Handles DELETE requests"],
+      "answer": "B",
+      "explanation": "@GetMapping is a composed annotation that acts as a shortcut for @RequestMapping(method = RequestMethod.GET)."
+    },
+    {
+      "id": 7,
+      "question": "Which file contains project configuration in Spring Boot?",
+      "options": ["spring.config", "project.json", "application.properties", "settings.xml"],
+      "answer": "C",
+      "explanation": "application.properties is the standard configuration file in Spring Boot applications."
+    },
+    {
+      "id": 8,
+      "question": "Spring Boot is built on top of which framework?",
+      "options": ["Django", "Laravel", "React", "Spring Framework"],
+      "answer": "D",
+      "explanation": "Spring Boot is built on top of the Spring Framework, providing a way to create stand-alone, production-grade Spring-based applications."
+    },
+    {
+      "id": 9,
+      "question": "What is returned from a REST controller method by default?",
+      "options": ["HTML", "JSP", "JSON", "XML only"],
+      "answer": "C",
+      "explanation": "REST controllers in Spring Boot return data in JSON format by default when using @RestController."
+    },
+    {
+      "id": 10,
+      "question": "Which tool is used to generate a Spring Boot project quickly?",
+      "options": ["IntelliJ Builder", "Spring Initializr", "BootMaker", "MavenCreator"],
+      "answer": "B",
+      "explanation": "Spring Initializr is a web-based tool that helps you quickly generate a Spring Boot project with your chosen dependencies."
+    },
+    {
+      "id": 11,
+      "question": "The main() method in Spring Boot uses which method to run the app?",
+      "options": ["runApp()", "BootApplication.start()", "SpringApplication.run()", "Start.run()"],
+      "answer": "C",
+      "explanation": "Spring Boot applications are started using SpringApplication.run(Application.class, args); in the main method."
+    },
+    {
+      "id": 12,
+      "question": "In a Spring Boot project, controllers are typically placed in which folder?",
+      "options": ["/bin", "/controller", "/resources", "/META-INF"],
+      "answer": "B",
+      "explanation": "While not strictly enforced, by convention, controllers are typically placed in a 'controller' package or directory."
+    },
+    {
+      "id": 13,
+      "question": "Which annotation combines @Controller and @ResponseBody?",
+      "options": ["@RestController", "@Service", "@Component", "@Repository"],
+      "answer": "A",
+      "explanation": "@RestController is a convenience annotation that combines @Controller and @ResponseBody."
+    },
+    {
+      "id": 14,
+      "question": "Which HTTP method is typically used to retrieve data?",
+      "options": ["POST", "GET", "PUT", "DELETE"],
+      "answer": "B",
+      "explanation": "The GET HTTP method is used to request data from a specified resource."
+    },
+    {
+      "id": 15,
+      "question": "What happens when you run a Spring Boot project?",
+      "options": ["It starts an embedded server", "It creates a WAR file", "It opens a browser automatically", "It compiles XML files"],
+      "answer": "A",
+      "explanation": "Spring Boot includes an embedded server (Tomcat by default) that starts when you run the application."
+    },
+    {
+      "id": 16,
+      "question": "Which annotation is used for mapping URLs in REST controllers?",
+      "options": ["@MapURL", "@Get", "@Path", "@GetMapping / @PostMapping"],
+      "answer": "D",
+      "explanation": "Spring uses @GetMapping, @PostMapping, etc. for mapping web requests to handler methods."
+    },
+    {
+      "id": 17,
+      "question": "What type of application is Spring Boot best suited for?",
+      "options": ["Desktop apps", "Command-line games", "REST APIs and microservices", "Android apps"],
+      "answer": "C",
+      "explanation": "While Spring Boot can be used for various types of applications, it's particularly well-suited for building REST APIs and microservices."
+    },
+    {
+      "id": 18,
+      "question": "What does 'opinionated' mean in Spring Boot?",
+      "options": ["It asks for user opinions", "It forces a strict structure", "It makes decisions for you using defaults", "It ignores configuration"],
+      "answer": "C",
+      "explanation": "Spring Boot is 'opinionated' in that it provides default configurations and setup, allowing developers to get started quickly with sensible defaults."
+    },
+    {
+      "id": 19,
+      "question": "The return type of most controller methods is usually:",
+      "options": ["String / Object", "int", "float", "JSP file"],
+      "answer": "A",
+      "explanation": "Controller methods typically return an Object (which gets converted to JSON) or a String (view name)."
+    },
+    {
+      "id": 20,
+      "question": "Which dependency is needed to create web apps/APIs in Spring Boot?",
+      "options": ["Spring-Data", "Spring-Web", "Spring-Security", "Spring-Mail"],
+      "answer": "B",
+      "explanation": "The 'spring-boot-starter-web' dependency is needed to create web applications and RESTful APIs."
+    },
+    {
+      "id": 21,
+      "question": "What does the @ResponseBody annotation do?",
+      "options": ["Returns HTML", "Converts objects to JSON and sends in response", "Starts database", "Creates a service"],
+      "answer": "B",
+      "explanation": "@ResponseBody indicates that a method return value should be bound to the web response body."
+    },
+    {
+      "id": 22,
+      "question": "In Spring Boot, application logic is written in:",
+      "options": ["HTML templates", "Java classes", "Shell scripts", "Python modules"],
+      "answer": "B",
+      "explanation": "Spring Boot applications are primarily written in Java (or Kotlin/Groovy) using Java classes."
+    },
+    {
+      "id": 23,
+      "question": "Which port does Spring Boot use by default?",
+      "options": ["3000", "7000", "8080", "5000"],
+      "answer": "C",
+      "explanation": "The default embedded server in Spring Boot runs on port 8080."
+    },
+    {
+      "id": 24,
+      "question": "What is required to run a Spring Boot application?",
+      "options": ["Tomcat installation", "Java installed", "Apache server", "Node.js"],
+      "answer": "B",
+      "explanation": "You only need Java (JRE) installed to run a Spring Boot application. It includes an embedded server."
+    },
+    {
+      "id": 25,
+      "question": "What happens if two controllers have the same endpoint URL?",
+      "options": ["Spring Boot chooses one randomly", "Error: ambiguous mapping", "Both run", "Application stops silently"],
+      "answer": "B",
+      "explanation": "Spring will throw an 'Ambiguous mapping' error if it finds duplicate request mappings."
+    },
+    {
+      "id": 26,
+      "question": "What is a REST API?",
+      "options": ["A tool for making UI", "A service that communicates using HTTP", "A file storage system", "A database"],
+      "answer": "B",
+      "explanation": "A REST API is an architectural style for distributed hypermedia systems, commonly using HTTP for communication."
+    },
+    {
+      "id": 27,
+      "question": "Which annotation is used to enable Spring Boot auto‑configuration?",
+      "options": ["@EnableConfig", "@EnableAutoConfiguration", "@ConfigOn", "@EnableSpringBoot"],
+      "answer": "B",
+      "explanation": "@EnableAutoConfiguration enables Spring Boot's auto-configuration feature, which is also included in @SpringBootApplication."
+    },
+    {
+      "id": 28,
+      "question": "What does the 'resources/static' folder contain?",
+      "options": ["Java classes", "Static files like HTML, CSS", "Database configs", "JAR files"],
+      "answer": "B",
+      "explanation": "The 'static' folder under 'resources' is used to serve static content like HTML, CSS, JavaScript, and images."
+    },
+    {
+      "id": 29,
+      "question": "What is the default return format for APIs?",
+      "options": ["JSON", "HTML", "PDF", "Excel"],
+      "answer": "A",
+      "explanation": "By default, Spring Boot returns data in JSON format from REST endpoints."
+    },
+    {
+      "id": 30,
+      "question": "What is the purpose of the @GetMapping(\"/hello\") annotation?",
+      "options": ["Declares a variable", "Handles a GET request for /hello", "Starts the server", "Creates a database table"],
+      "answer": "B",
+      "explanation": "@RequestMapping(method = RequestMethod.GET, value = \"/hello\") maps HTTP GET requests onto specific handler methods."
+    }
+  ],
+  "advanced": [
+    {
+      "id": 1,
+      "question": "What will be the output when this endpoint is called?\n@RestController\npublic class HelloController {\n    @GetMapping(\"/hi\")\n    public String sayHi() {\n        return \"Hi!\";\n    }\n}",
+      "options": ["HTML page", "JSON \"Hi!\"", "An error", "Nothing"],
+      "answer": "B",
+      "explanation": "The @RestController annotation automatically converts the return value to JSON format."
+    },
+    {
+      "id": 2,
+      "question": "What annotation is missing from this main class?\npublic class DemoApplication {\n    public static void main(String[] args) {\n        SpringApplication.run(DemoApplication.class, args);\n    }\n}",
+      "options": ["@Controller", "@RestController", "@SpringBootApplication", "@EnableWeb"],
+      "answer": "C",
+      "explanation": "The @SpringBootApplication annotation is required to mark the main class of a Spring Boot application."
+    },
+    {
+      "id": 3,
+      "question": "What does this mapping handle?\n@GetMapping(\"/welcome\")\npublic String welcome() {\n    return \"Welcome!\";\n}",
+      "options": ["POST request", "GET request", "DELETE request", "PUT request"],
+      "answer": "B",
+      "explanation": "@GetMapping is specifically for handling HTTP GET requests."
+    },
+    {
+      "id": 4,
+      "question": "What is wrong in this code?\n@RestController\npublic class TestController {\n\n    @GetMapping(\"/test\")\n    public String test()\n        return \"Test\";\n    }\n}",
+      "options": ["Wrong annotation", "Missing semicolon", "Missing { after method signature", "Missing main method"],
+      "answer": "C",
+      "explanation": "The method is missing an opening curly brace after the parameter list."
+    },
+    {
+      "id": 5,
+      "question": "Which folder usually contains controllers?\nsrc\n └── main\n      └── java\n          └── com.example.demo\n                └── ??????",
+      "options": ["templates", "static", "controller", "database"],
+      "answer": "C",
+      "explanation": "By convention, controller classes are typically placed in a 'controller' package."
+    },
+    {
+      "id": 6,
+      "question": "What does Spring Boot return by default?\n@GetMapping(\"/data\")\npublic String data() {\n    return \"Spring\";\n}",
+      "options": ["XML", "JSON/text", "HTML", "PDF"],
+      "answer": "B",
+      "explanation": "Spring Boot returns the string as plain text by default, which can be automatically converted to JSON in a REST controller."
+    },
+    {
+      "id": 7,
+      "question": "Which annotation allows returning JSON automatically?\npublic class MyController { }",
+      "options": ["@Service", "@RestController", "@Controller", "@JSON"],
+      "answer": "B",
+      "explanation": "@RestController is a convenience annotation that combines @Controller and @ResponseBody, enabling automatic JSON conversion."
+    },
+    {
+      "id": 8,
+      "question": "What happens when you run this class?\n@SpringBootApplication\npublic class App {\n    public static void main(String[] args) {\n        SpringApplication.run(App.class, args);\n    }\n}",
+      "options": ["App crashes", "App runs on port 8080", "No server starts", "Must install Tomcat manually"],
+      "answer": "B",
+      "explanation": "Spring Boot starts an embedded Tomcat server on port 8080 by default."
+    },
+    {
+      "id": 9,
+      "question": "What will be the URL for this endpoint?\n@GetMapping(\"/hello\")\npublic String hi() { return \"Hello!\"; }",
+      "options": ["localhost/", "localhost:8080/hello", "localhost:3000/hello", "localhost:8081/hello"],
+      "answer": "B",
+      "explanation": "The default URL is localhost:8080 followed by the endpoint path /hello."
+    },
+    {
+      "id": 10,
+      "question": "What is missing?\n@RestController\npublic class Api {\n    @GetMapping\n    public String home() {\n        return \"Home\";\n    }\n}",
+      "options": ["Return statement", "URL in @GetMapping", "@SpringBootApplication", "@RequestBody"],
+      "answer": "B",
+      "explanation": "The @GetMapping annotation is missing a URL path."
+    },
+    {
+      "id": 11,
+      "question": "What is wrong?\n@RestController\npublic class Demo {\n\n    @PostMapping(\"/add\")\n    public String add() {\n        return \"Added\";\n    }\n}",
+      "options": ["Wrong annotation", "Nothing (valid code)", "Missing return type", "Missing @EnableAutoConfig"],
+      "answer": "B",
+      "explanation": "The code is valid - it's a properly defined REST endpoint for handling POST requests."
+    },
+    {
+      "id": 12,
+      "question": "What will be printed?\n@GetMapping(\"/msg\")\npublic String message() {\n    return \"Hello \" + \"World\";\n}",
+      "options": ["Nothing", "\"HelloWorld\"", "\"Hello World\"", "Error"],
+      "answer": "C",
+      "explanation": "The strings will be concatenated with a space in between."
+    },
+    {
+      "id": 13,
+      "question": "What does this represent?\n@SpringBootApplication\npublic class DemoApp { }",
+      "options": ["Enables auto‑configuration", "Enables component scanning", "Marks main class", "All of the above"],
+      "answer": "D",
+      "explanation": "@SpringBootApplication is a convenience annotation that adds all of the above."
+    },
+    {
+      "id": 14,
+      "question": "What is the issue?\n@GetMapping(\"/user\")\npublic String getUser(String name) {\n    return name;\n}",
+      "options": ["Missing @RequestParam", "Missing @PathVariable", "Wrong annotation", "Cannot return string"],
+      "answer": "A",
+      "explanation": "The method parameter should be annotated with @RequestParam to bind the request parameter."
+    },
+    {
+      "id": 15,
+      "question": "What is true about this code?\n@RestController\npublic class Sample {\n\n    @GetMapping(\"/x\")\n    public int method() {\n        return 100;\n    }\n}",
+      "options": ["Invalid return type", "Will return 100 as JSON", "Throws error", "Must use String"],
+      "answer": "B",
+      "explanation": "The int will be automatically converted to JSON format ({\"x\":100}) by Spring's message converters."
+    },
+    {
+      "id": 16,
+      "question": "What is missing?\n@Controller\npublic class Api {\n    @GetMapping(\"/check\")\n    public String check() {\n        return \"OK\";\n    }\n}",
+      "options": ["@RestController", "@ResponseBody", "@Bean", "@Repository"],
+      "answer": "B",
+      "explanation": "With @Controller, you need @ResponseBody to return the string directly instead of looking for a view."
+    },
+    {
+      "id": 17,
+      "question": "Choose the correct statement.\n@GetMapping(\"/a\")\npublic String a() { return \"A\"; }\n\n@GetMapping(\"/a\")\npublic String b() { return \"B\"; }",
+      "options": ["Both run", "Random output", "Error: Duplicate mapping", "Valid only in microservices"],
+      "answer": "C",
+      "explanation": "Spring doesn't allow duplicate URL mappings in the same controller."
+    },
+    {
+      "id": 18,
+      "question": "What is true?\n@RestController\npublic class Demo {\n    @GetMapping(\"/test\")\n    public String test() { return \"OK\"; }\n}",
+      "options": ["Must write XML config", "Auto‑config will scan this class", "Cannot use /test", "Needs @Component"],
+      "answer": "B",
+      "explanation": "Spring Boot's component scanning will automatically detect and register this controller."
+    },
+    {
+      "id": 19,
+      "question": "What does this return?\n@GetMapping(\"/json\")\npublic Map<String,String> m() {\n    Map<String,String> map = new HashMap<>();\n    map.put(\"k\",\"v\");\n    return map;\n}",
+      "options": ["Error", "HTML", "{\"k\":\"v\"}", "null"],
+      "answer": "C",
+      "explanation": "The Map will be automatically converted to JSON format."
+    },
+    {
+      "id": 20,
+      "question": "Identify the issue.\n@RestController\npublic class Api {\n    @GetMapping(\"/id/{id}\")\n    public String getId(int id) {\n        return id + \"\";\n    }\n}",
+      "options": ["Should use @Value", "Missing @PathVariable", "Missing @Autowired", "Return type wrong"],
+      "answer": "B",
+      "explanation": "The method parameter needs @PathVariable to bind the URL template variable."
+    },
+    {
+      "id": 21,
+      "question": "What happens?\n@GetMapping(\"/hi\")\npublic void hi() { }",
+      "options": ["Returns empty response", "Error", "Returns null", "Must return string"],
+      "answer": "A",
+      "explanation": "A void return type results in an empty response body with status 200."
+    },
+    {
+      "id": 22,
+      "question": "What is wrong?\n@RestController\npublic class Test {\n    @GetMapping(\"hello\")\n    public String hello() { return \"Hi\"; }\n}",
+      "options": ["Missing slash \"/\"", "Missing @RestController", "Missing return type", "Nothing wrong"],
+      "answer": "D",
+      "explanation": "The leading slash in @GetMapping is optional."
+    },
+    {
+      "id": 23,
+      "question": "What port is used?\nSpringApplication.run(App.class, args);",
+      "options": ["8080", "Random", "3000", "5000"],
+      "answer": "A",
+      "explanation": "The default port for embedded Tomcat in Spring Boot is 8080."
+    },
+    {
+      "id": 24,
+      "question": "What is true for this endpoint?\n@GetMapping(\"/sum\")\npublic int sum() {\n    return 5 + 3;\n}",
+      "options": ["Error", "Returns 8 as JSON", "Must return String", "Needs @JSON"],
+      "answer": "B",
+      "explanation": "The int will be automatically converted to JSON format."
+    },
+    {
+      "id": 25,
+      "question": "What is the wrong part here?\n@GetMapping()\npublic String a() {\n    return \"A\";\n}",
+      "options": ["Mapping is empty", "Should be POST", "Missing return", "Nothing wrong"],
+      "answer": "D",
+      "explanation": "An empty @GetMapping maps to the root path (\"/\")."
+    },
+    {
+      "id": 26,
+      "question": "What does this code signify?\n@RestController\npublic class Api { }",
+      "options": ["No endpoints", "Class is REST controller", "Auto JSON support", "All of the above"],
+      "answer": "D",
+      "explanation": "@RestController marks the class as a controller with all its methods having @ResponseBody by default."
+    },
+    {
+      "id": 27,
+      "question": "What is wrong?\n@GetMapping(\"/x\")\nString test() {\n    return \"OK\";\n}",
+      "options": ["Missing return type", "Should be public", "Missing class scope", "Must throw exception"],
+      "answer": "B",
+      "explanation": "Controller methods should be public to be accessible as endpoints."
+    },
+    {
+      "id": 28,
+      "question": "What does this do?\n@RequestMapping(\"/api\")\npublic class Controller {\n    @GetMapping(\"/hello\")\n    public String h() {\n        return \"Hi\";\n    }\n}",
+      "options": ["URL becomes /hello", "URL becomes /api/hello", "URL becomes /api", "Invalid code"],
+      "answer": "B",
+      "explanation": "The class-level @RequestMapping prepends \"/api\" to all method-level mappings."
+    },
+    {
+      "id": 29,
+      "question": "What does this indicate?\n@Controller\npublic class C {\n    @GetMapping(\"/a\")\n    public String a() { return \"A\"; }\n}",
+      "options": ["Returns JSON", "Returns view name \"A\"", "Error", "Needs @Id"],
+      "answer": "B",
+      "explanation": "With @Controller, the return value is treated as a view name, not the response body."
+    },
+    {
+      "id": 30,
+      "question": "What is wrong here?\n@RestController\npublic class Demo {\n    @GetMapping(\"/a\")\n    public String a() {\n        return \"A\"\n    }\n}",
+      "options": ["Missing semicolon after \"A\"", "Missing annotation", "Missing main method", "Wrong mapping"],
+      "answer": "A",
+      "explanation": "The string literal is missing its closing semicolon."
+    }
+  ]
+}
