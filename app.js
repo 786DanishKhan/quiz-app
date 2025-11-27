@@ -95,7 +95,7 @@ function renderQuestions() {
                     </div>
                 `).join('')}
             </div>
-            <button class="toggle-answer">Show Answer</button>
+            <button class="toggle-answer">Reveal Solution</button>
             <div class="answer-section">
                 <p class="answer-text"><strong>Answer:</strong> ${question.answer}</p>
                 ${question.explanation ? `<p class="explanation"><strong>Explanation:</strong> ${question.explanation}</p>` : ''}
