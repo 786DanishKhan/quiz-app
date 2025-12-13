@@ -1,0 +1,220 @@
+{
+  "day": 3,
+  "basic": [
+    {
+      "id": 1,
+      "question": "What is the main purpose of the Service layer in Spring Boot?",
+      "options": ["Handle HTTP requests", "Store data permanently", "Write business logic", "Render HTML pages"],
+      "answer": "C",
+      "explanation": "The Service layer is responsible for containing the business logic of the application."
+    },
+    {
+      "id": 2,
+      "question": "Which annotation is used to mark a service class?",
+      "options": ["@RestController", "@Repository", "@Service", "@Component"],
+      "answer": "C",
+      "explanation": "The @Service annotation is specifically used to indicate that a class belongs to the service layer."
+    },
+    {
+      "id": 3,
+      "question": "What is Dependency Injection?",
+      "options": [
+        "Injecting CSS into HTML",
+        "A way to automatically provide required objects",
+        "A database query method",
+        "A type of API testing"
+      ],
+      "answer": "B",
+      "explanation": "Dependency Injection is a design pattern where objects receive their dependencies from an external source rather than creating them internally."
+    },
+    {
+      "id": 4,
+      "question": "Which injection style is recommended in modern Spring Boot?",
+      "options": ["Field injection", "Setter injection", "Constructor injection", "Static injection"],
+      "answer": "C",
+      "explanation": "Constructor injection is recommended as it makes dependencies explicit and allows for immutability."
+    },
+    {
+      "id": 5,
+      "question": "What does @Autowired do?",
+      "options": ["Runs SQL queries", "Automatically injects dependencies", "Starts the application", "Creates REST endpoints"],
+      "answer": "B",
+      "explanation": "The @Autowired annotation is used to automatically inject dependencies in Spring."
+    },
+    {
+      "id": 6,
+      "question": "In a layered architecture, which layer calls the Service layer?",
+      "options": ["Entity layer", "Controller layer", "Repository layer", "Database layer"],
+      "answer": "B",
+      "explanation": "The Controller layer receives HTTP requests and calls the appropriate methods in the Service layer."
+    },
+    {
+      "id": 7,
+      "question": "Which layer communicates with the database?",
+      "options": ["Service", "Repository", "Controller", "Model"],
+      "answer": "B",
+      "explanation": "The Repository layer is responsible for data access and communication with the database."
+    },
+    {
+      "id": 8,
+      "question": "What is a Bean in Spring?",
+      "options": ["A database column", "An object managed by the Spring container", "A table in MySQL", "A REST API"],
+      "answer": "B",
+      "explanation": "In Spring, a Bean is an object that is instantiated, assembled, and managed by the Spring IoC container."
+    },
+    {
+      "id": 9,
+      "question": "Which annotation is used to declare a bean manually?",
+      "options": ["@Bean", "@Manual", "@Create", "@Service"],
+      "answer": "A",
+      "explanation": "The @Bean annotation is used to explicitly declare a single bean in a configuration class."
+    },
+    {
+      "id": 10,
+      "question": "Where is @Bean typically used?",
+      "options": ["Controller classes", "Service classes", "Configuration classes", "Entity classes"],
+      "answer": "C",
+      "explanation": "@Bean is typically used in @Configuration classes to declare beans explicitly."
+    },
+    {
+      "id": 11,
+      "question": "Which DI method prevents circular dependencies?",
+      "options": ["Field injection", "Constructor injection", "Setter injection", "@Autowired on fields"],
+      "answer": "B",
+      "explanation": "Constructor injection helps prevent circular dependencies as it makes the dependency requirements explicit and can be validated at startup."
+    },
+    {
+      "id": 12,
+      "question": "The Service layer should contain:",
+      "options": ["Business logic", "HTML content", "SQL queries", "API routes"],
+      "answer": "A",
+      "explanation": "The Service layer should contain the core business logic of the application."
+    },
+    {
+      "id": 13,
+      "question": "Which of the following is NOT part of the typical three‑layer structure?",
+      "options": ["Controller", "Service", "Repository", "Compiler"],
+      "answer": "D",
+      "explanation": "The typical three-layer structure consists of Controller, Service, and Repository layers. Compiler is not part of this architecture."
+    },
+    {
+      "id": 14,
+      "question": "What happens when a class is annotated with @Service?",
+      "options": ["It becomes a REST controller", "Spring creates a bean for it", "It becomes a database model", "It runs at application startup"],
+      "answer": "B",
+      "explanation": "The @Service annotation marks the class as a service provider and Spring creates a bean for it."
+    },
+    {
+      "id": 15,
+      "question": "What does IoC stand for?",
+      "options": ["Input of Code", "Internal Object Call", "Inversion of Control", "Instance of Controller"],
+      "answer": "C",
+      "explanation": "IoC stands for Inversion of Control, a principle where the control of object creation and management is given to the framework."
+    },
+    {
+      "id": 16,
+      "question": "IoC means:",
+      "options": ["Spring takes control of object creation", "Developers manually create objects", "Code runs faster", "HTML files are rendered"],
+      "answer": "A",
+      "explanation": "Inversion of Control means the Spring container takes control of object creation and dependency injection."
+    },
+    {
+      "id": 17,
+      "question": "Which layer can call the Repository layer?",
+      "options": ["Controller", "Service", "Database", "Model"],
+      "answer": "B",
+      "explanation": "The Service layer is responsible for business logic and coordinates data operations by calling the Repository layer."
+    },
+    {
+      "id": 18,
+      "question": "What is the preferred way to inject a service into a controller?",
+      "options": ["new MyService()", "Field injection", "Constructor injection", "Using static methods"],
+      "answer": "C",
+      "explanation": "Constructor injection is preferred as it makes dependencies explicit and allows for easier testing and immutability."
+    },
+    {
+      "id": 19,
+      "question": "In Spring, classes annotated with @Service are:",
+      "options": ["Singletons by default", "Prototypes", "Request scoped", "Session scoped"],
+      "answer": "A",
+      "explanation": "By default, Spring creates a single instance of each @Service class (singleton scope)."
+    },
+    {
+      "id": 20,
+      "question": "What happens if a required dependency is missing?",
+      "options": ["Spring skips it", "Application fails at startup", "Controller keeps running", "Service gets default value"],
+      "answer": "B",
+      "explanation": "If a required dependency is missing, Spring will fail to start the application, which helps catch configuration errors early."
+    },
+    {
+      "id": 21,
+      "question": "What is wrong with this code?\n@RestController\npublic class UserController {\n    @Autowired\n    private UserService userService;\n    @GetMapping(\"/users\")\n    public String getUsers() {\n        return userService.getAll();\n    }\n}",
+      "options": ["@Autowired is wrong", "Missing @Service on UserService class", "@RestController cannot have methods", "getUsers must return int"],
+      "answer": "B",
+      "explanation": "The UserService class needs to be properly annotated with @Service (or another Spring stereotype) for dependency injection to work."
+    },
+    {
+      "id": 22,
+      "question": "Identify the issue:\n@Service\npublic class ProductService {\n    @Autowired\n    ProductRepository productRepository;\n    public List<Product> findAll() {\n        return productrepository.findAll();\n    }\n}",
+      "options": ["@Service is incorrect", "Method return type is wrong", "Typo in variable name", "Autowiring is not allowed"],
+      "answer": "C",
+      "explanation": "There's a typo in the variable name: 'productrepository' should be 'productRepository' (case-sensitive)."
+    },
+    {
+      "id": 23,
+      "question": "What will Spring inject when using DI?",
+      "options": ["A random object", "The required bean", "A null object", "A string"],
+      "answer": "B",
+      "explanation": "Spring will inject the appropriate bean that matches the required type and qualifiers."
+    },
+    {
+      "id": 24,
+      "question": "What does @ComponentScan do?",
+      "options": ["Scans for HTML files", "Scans for beans and components", "Scans only controllers", "Deletes unused beans"],
+      "answer": "B",
+      "explanation": "@ComponentScan tells Spring where to look for components, configurations, and services."
+    },
+    {
+      "id": 25,
+      "question": "Which annotation marks configuration classes?",
+      "options": ["@Config", "@Configuration", "@Setup", "@BootConfig"],
+      "answer": "B",
+      "explanation": "The @Configuration annotation indicates that a class declares one or more @Bean methods."
+    },
+    {
+      "id": 26,
+      "question": "Which is true about constructor injection?",
+      "options": ["Need @Autowired always", "Spring automatically injects if only one constructor exists", "It cannot inject repositories", "Not recommended in Spring"],
+      "answer": "B",
+      "explanation": "In Spring 4.3+, if a class has only one constructor, @Autowired can be omitted as Spring will use that constructor by default."
+    },
+    {
+      "id": 27,
+      "question": "What annotation is used for marking repository classes?",
+      "options": ["@Storage", "@Repo", "@Repository", "@Service"],
+      "answer": "C",
+      "explanation": "The @Repository annotation is used to indicate that the class provides the mechanism for storage, retrieval, search, update and delete operation on objects."
+    },
+    {
+      "id": 28,
+      "question": "What does the Service layer return to the Controller?",
+      "options": ["Raw SQL", "Processed business data", "HTML", "JSP file"],
+      "answer": "B",
+      "explanation": "The Service layer processes the business logic and returns processed data to the Controller."
+    },
+    {
+      "id": 29,
+      "question": "What object creates and manages all beans?",
+      "options": ["BeanMaker", "Maven", "ApplicationContext", "Tomcat"],
+      "answer": "C",
+      "explanation": "The ApplicationContext is the central interface within a Spring application that is responsible for instantiating, configuring, and managing the lifecycle of all the beans."
+    },
+    {
+      "id": 30,
+      "question": "What is the benefit of a layered architecture?",
+      "options": ["Makes applications slower", "Clear separation of responsibilities", "Requires more code always", "Only works for small projects"],
+      "answer": "B",
+      "explanation": "Layered architecture provides clear separation of concerns, making the application more maintainable, testable, and scalable."
+    }
+  ]
+}
