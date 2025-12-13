@@ -216,5 +216,217 @@
       "answer": "B",
       "explanation": "Layered architecture provides clear separation of concerns, making the application more maintainable, testable, and scalable."
     }
+  ],
+  "advanced": [
+    {
+      "id": 1,
+      "question": "Which annotation marks a class that holds business logic?",
+      "options": ["@Component", "@Service", "@Repository", "@RestController"],
+      "answer": "B",
+      "explanation": "The @Service annotation is used to mark a class that holds business logic in the service layer."
+    },
+    {
+      "id": 2,
+      "question": "Spring's Dependency Injection reduces...",
+      "options": ["Performance", "Coupling", "Compilation", "Logging"],
+      "answer": "B",
+      "explanation": "Dependency Injection helps reduce coupling between components by delegating object creation to the Spring container."
+    },
+    {
+      "id": 3,
+      "question": "Which Spring layer communicates with the database?",
+      "options": ["Service", "Controller", "Repository", "Model"],
+      "answer": "C",
+      "explanation": "The Repository layer is responsible for database communication in Spring applications."
+    },
+    {
+      "id": 4,
+      "question": "Default bean scope in Spring?",
+      "options": ["Prototype", "Singleton", "Request", "Session"],
+      "answer": "B",
+      "explanation": "The default scope in Spring is Singleton, meaning only one instance of the bean is created per Spring IoC container."
+    },
+    {
+      "id": 5,
+      "question": "What does @Autowired do?",
+      "options": ["Starts the server", "Injects dependencies", "Creates new objects", "Validates beans"],
+      "answer": "B",
+      "explanation": "@Autowired is used for automatic dependency injection in Spring."
+    },
+    {
+      "id": 6,
+      "question": "Which annotation enables component-scanning of classes?",
+      "options": ["@SpringBootApplication", "@Bean", "@ComponentScan", "@Autowired"],
+      "answer": "C",
+      "explanation": "@ComponentScan tells Spring where to look for components, configurations, and services."
+    },
+    {
+      "id": 7,
+      "question": "@Service is technically a specialization of...",
+      "options": ["@Component", "@RestController", "@Repository", "@Entity"],
+      "answer": "A",
+      "explanation": "@Service is a specialization of @Component, which is a generic stereotype for any Spring-managed component."
+    },
+    {
+      "id": 8,
+      "question": "Which injection type is the best practice?",
+      "options": ["Field injection", "Constructor injection", "Setter injection", "Static injection"],
+      "answer": "B",
+      "explanation": "Constructor injection is recommended as it makes dependencies explicit and allows for immutability."
+    },
+    {
+      "id": 9,
+      "question": "Controller should contain...",
+      "options": ["Complex business logic", "Database code", "Request handling logic only", "Validation only"],
+      "answer": "C",
+      "explanation": "Controllers should be thin and only handle HTTP requests, delegating business logic to services."
+    },
+    {
+      "id": 10,
+      "question": "Which layer should never directly access the database?",
+      "options": ["Controller", "Service", "Repository", "Mapper"],
+      "answer": "A",
+      "explanation": "Controllers should not directly access the database; they should delegate to the service layer."
+    },
+    {
+      "id": 11,
+      "question": "What is wrong here?\n@Service\npublic class UserService {\n    @Autowired\n    private UserRepository repo;\n    public List<User> getAll() {\n        return repo.findAll();\n    }\n}",
+      "options": ["Should not use @Service", "Field injection not recommended", "repo must be final", "Method name invalid"],
+      "answer": "B",
+      "explanation": "Field injection is not recommended. Constructor injection is preferred for better testability and immutability."
+    },
+    {
+      "id": 12,
+      "question": "What happens here?\n@Service\npublic class ProductService {\n    private ProductRepository repo;\n    public ProductService(ProductRepository repo) {\n        repo = repo;\n    }\n}",
+      "options": ["Works fine", "repo field stays null", "Compile error", "Application fails to start"],
+      "answer": "B",
+      "explanation": "The assignment is incorrect. It should be 'this.repo = repo;' to assign the parameter to the field."
+    },
+    {
+      "id": 13,
+      "question": "What is missing?\n@Controller\npublic class OrderController {\n    private OrderService service;\n    public OrderController(OrderService service) {\n        service = service;\n    }\n}",
+      "options": ["@Autowired", "Assignment: this.service = service;", "@RestController", "A return type"],
+      "answer": "B",
+      "explanation": "The assignment is incorrect. It should be 'this.service = service;' to assign the parameter to the field."
+    },
+    {
+      "id": 14,
+      "question": "What is the result?\n@Service\nclass A {\n    @Autowired\n    private B b;\n}\n\n@Service\nclass B {\n    @Autowired\n    private A a;\n}",
+      "options": ["Works", "Circular dependency error", "Creates multiple beans", "Auto-resolves"],
+      "answer": "B",
+      "explanation": "This creates a circular dependency between A and B, which Spring cannot resolve by default."
+    },
+    {
+      "id": 15,
+      "question": "How does Spring choose which bean to inject?",
+      "options": ["By variable name", "By return type", "By package", "By class order"],
+      "answer": "B",
+      "explanation": "Spring primarily matches beans by type. If multiple beans of the same type exist, it uses the variable name or @Qualifier to disambiguate."
+    },
+    {
+      "id": 16,
+      "question": "What annotation is used on data-related classes?",
+      "options": ["@Repository", "@Configuration", "@Service", "@Bean"],
+      "answer": "A",
+      "explanation": "@Repository is used to indicate that the class provides the mechanism for storage, retrieval, search, update and delete operation on objects."
+    },
+    {
+      "id": 17,
+      "question": "What does @ComponentScan mainly do?",
+      "options": ["Creates beans", "Scans packages for classes", "Starts the server", "Loads properties"],
+      "answer": "B",
+      "explanation": "@ComponentScan tells Spring where to look for components, configurations, and services."
+    },
+    {
+      "id": 18,
+      "question": "Which scope creates a new bean each time?",
+      "options": ["Singleton", "Prototype", "Session", "Request"],
+      "answer": "B",
+      "explanation": "The prototype scope creates a new bean instance each time one is needed."
+    },
+    {
+      "id": 19,
+      "question": "Spring DI internally uses...",
+      "options": ["Threads", "Reflection", "Events", "Proxies only"],
+      "answer": "B",
+      "explanation": "Spring uses reflection to instantiate beans and inject dependencies."
+    },
+    {
+      "id": 20,
+      "question": "What is a Service class expected to be?",
+      "options": ["Stateful", "Stateless", "UI-dependent", "Thread-local"],
+      "answer": "B",
+      "explanation": "Service classes should typically be stateless for better scalability and thread safety."
+    },
+    {
+      "id": 21,
+      "question": "Which annotation gives highest precedence when multiple beans exist?",
+      "options": ["@Qualifier(\"beanName\")", "@Primary", "@Autowired", "@Resource"],
+      "answer": "B",
+      "explanation": "@Primary indicates that a bean should be given preference when multiple candidates are qualified to autowire a single-valued dependency."
+    },
+    {
+      "id": 22,
+      "question": "If two beans of the same type exist and no @Qualifier is used...",
+      "options": ["Spring randomly picks one", "Spring fails to start", "Spring merges them", "Spring logs a warning only"],
+      "answer": "B",
+      "explanation": "Spring will throw a NoUniqueBeanDefinitionException if multiple beans of the same type exist and no @Qualifier or @Primary is specified."
+    },
+    {
+      "id": 23,
+      "question": "Which one resolves bean name conflicts?",
+      "options": ["@Primary", "@Qualifier", "Either A or B", "None"],
+      "answer": "C",
+      "explanation": "Both @Primary and @Qualifier can be used to resolve bean conflicts in different ways."
+    },
+    {
+      "id": 24,
+      "question": "Which constructor is used for dependency injection?",
+      "options": ["Only private constructors", "Only default constructors", "Constructor with parameters", "Static constructors"],
+      "answer": "C",
+      "explanation": "Spring uses the constructor with parameters for dependency injection. If there's only one constructor, @Autowired can be omitted in newer Spring versions."
+    },
+    {
+      "id": 25,
+      "question": "A service calling another service is...",
+      "options": ["Allowed", "Not allowed", "Allowed only in REST apps", "Allowed only with proxies"],
+      "answer": "A",
+      "explanation": "It's perfectly valid and common for one service to call another service in a well-layered architecture."
+    },
+    {
+      "id": 26,
+      "question": "Issue with this class?\n@Service\nclass EmailService {\n    private final NotificationService notify;\n    @Autowired\n    EmailService(NotificationService notify) { }\n}",
+      "options": ["Missing assignment", "Wrong annotation", "Proxy error", "Nothing"],
+      "answer": "A",
+      "explanation": "The constructor parameter is not assigned to the field. It should be 'this.notify = notify;'."
+    },
+    {
+      "id": 27,
+      "question": "What happens here?\n@Service\nclass X {\n    public X() {\n        System.out.println(\"Created\");\n    }\n}",
+      "options": ["Never prints", "Prints once", "Prints multiple times", "Crashes"],
+      "answer": "B",
+      "explanation": "By default, @Service creates a singleton bean, so the constructor is called only once when the application context starts."
+    },
+    {
+      "id": 28,
+      "question": "What is returned?\n@RestController\nclass Demo {\n    @GetMapping(\"/hi\")\n    String hi() { return \"Hello\"; }\n}",
+      "options": ["View", "JSON / plain text", "HTML", "JSP"],
+      "answer": "B",
+      "explanation": "@RestController returns the return value as the response body, typically as JSON or plain text."
+    },
+    {
+      "id": 29,
+      "question": "Which is TRUE about services?",
+      "options": ["Must store session data", "Should be stateless", "Should create threads", "Must use prototype scope"],
+      "answer": "B",
+      "explanation": "Services should generally be stateless for better scalability and thread safety."
+    },
+    {
+      "id": 30,
+      "question": "Correct architectural flow?",
+      "options": ["Controller → Service → Repository", "Repository → Controller → Service", "Service → Controller → Repository", "Model → Controller → Service"],
+      "answer": "A",
+      "explanation": "The standard flow is: Controller handles HTTP requests, calls Service for business logic, which in turn uses Repository for data access."
+    }
   ]
 }
