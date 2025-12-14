@@ -212,5 +212,216 @@
       "explanation": "Spring Data JPA supports custom queries using JPQL or the @Query annotation."
     }
   ],
-  "advanced": []
+  "advanced": [
+    {
+      "id": 1,
+      "question": "Which part of JPA manages entity objects inside memory?",
+      "options": ["Entity Manager Factory", "Persistence Context", "DataSource", "Repository Layer"],
+      "answer": "B",
+      "explanation": "The Persistence Context is the set of entity instances in which for any persistent entity identity there is a unique entity instance."
+    },
+    {
+      "id": 2,
+      "question": "Which annotation marks the owning side of a relationship?",
+      "options": ["@Entity", "@Id", "@JoinColumn", "@MappedBy"],
+      "answer": "C",
+      "explanation": "@JoinColumn is used on the owning side of the relationship to specify the foreign key column."
+    },
+    {
+      "id": 3,
+      "question": "The mappedBy attribute is used on:",
+      "options": ["Owning side", "Child side", "Non-owning side", "Any side"],
+      "answer": "C",
+      "explanation": "mappedBy is used on the non-owning (inverse) side of the relationship to indicate the field that owns the relationship."
+    },
+    {
+      "id": 4,
+      "question": "What is the default cascade type for relationships?",
+      "options": ["ALL", "NONE", "MERGE", "PERSIST"],
+      "answer": "B",
+      "explanation": "By default, no operations are cascaded in JPA relationships."
+    },
+    {
+      "id": 5,
+      "question": "In this code, which table gets the foreign key?\n@OneToMany\nprivate List<Order> orders;",
+      "options": ["Customer table", "Order table", "Both tables", "No foreign key created"],
+      "answer": "B",
+      "explanation": "In a unidirectional @OneToMany relationship, the foreign key is in the 'many' side (Order table) by default."
+    },
+    {
+      "id": 6,
+      "question": "Which JPQL query is correct?",
+      "options": ["SELECT * FROM Product", "SELECT p FROM Product p", "GET ALL Product", "QUERY Product"],
+      "answer": "B",
+      "explanation": "JPQL uses entity and field names, not table or column names, and requires an alias for the entity."
+    },
+    {
+      "id": 7,
+      "question": "What does the persistence context guarantee?",
+      "options": ["Same ID means same object instance", "Entities recreated on every call", "No caching", "Lazy loading disabled"],
+      "answer": "A",
+      "explanation": "The persistence context ensures that within a session, there is only one instance of a particular entity with a given ID."
+    },
+    {
+      "id": 8,
+      "question": "Which fetch type loads data only when needed?",
+      "options": ["LAZY", "EAGER", "DELAYED", "ON_DEMAND"],
+      "answer": "A",
+      "explanation": "LAZY fetching loads the data only when the relationship is first accessed."
+    },
+    {
+      "id": 9,
+      "question": "Which relationship is bidirectional?\nclass A {\n    @OneToMany(mappedBy=\"a\")\n    List<B> list;\n}\n\nclass B {\n    @ManyToOne\n    A a;\n}",
+      "options": ["Yes", "No", "Only after @JoinColumn", "Only after cascade"],
+      "answer": "A",
+      "explanation": "This is a bidirectional relationship because both entities have references to each other."
+    },
+    {
+      "id": 10,
+      "question": "What happens if a repository method name doesn't match JPA rules?",
+      "options": ["It works normally", "Warning only", "Spring fails at startup", "It becomes a runtime error"],
+      "answer": "C",
+      "explanation": "Spring Data JPA validates method names at startup and will fail if they don't follow the naming conventions."
+    },
+    {
+      "id": 11,
+      "question": "What is wrong here?\n@Entity\npublic class User {\n    @Id\n    private Long id;\n    private String name;\n}",
+      "options": ["Missing @Entity", "Missing @GeneratedValue", "Missing @Table", "Missing @Column"],
+      "answer": "B",
+      "explanation": "While not strictly required, it's a best practice to use @GeneratedValue for the primary key to let the database generate the ID."
+    },
+    {
+      "id": 12,
+      "question": "What happens here?\npublic interface URepo extends JpaRepository<User, String> {}",
+      "options": ["Works fine", "Wrong ID type", "Requires @Repository", "Interface cannot extend JpaRepository"],
+      "answer": "A",
+      "explanation": "This is a valid repository declaration. The ID type can be String or any other serializable type."
+    },
+    {
+      "id": 13,
+      "question": "What is the error?\n@OneToMany\nprivate Order order;",
+      "options": ["Should be List or Set", "Missing @JoinColumn", "Should be @ManyToOne", "Should be optional"],
+      "answer": "A",
+      "explanation": "@OneToMany should be used with a Collection, List, or Set, not with a single entity."
+    },
+    {
+      "id": 14,
+      "question": "What is wrong in this entity?\n@Entity\npublic class Item {\n    private Long id;\n    private String name;\n}",
+      "options": ["No primary key", "Missing @Column", "Too many fields", "Wrong annotation"],
+      "answer": "A",
+      "explanation": "The entity is missing the @Id annotation, which is required to mark the primary key."
+    },
+    {
+      "id": 15,
+      "question": "What does .getReferenceById(id) do?",
+      "options": ["Loads entity immediately", "Returns a proxy (lazy reference)", "Deletes the entity", "Throws an exception"],
+      "answer": "B",
+      "explanation": "getReferenceById() returns a proxy and doesn't hit the database until the entity is actually accessed."
+    },
+    {
+      "id": 16,
+      "question": "Which annotation handles composite keys?",
+      "options": ["@ComboId", "@IdClass", "@MultiId", "@Composite"],
+      "answer": "B",
+      "explanation": "@IdClass is used to define a composite primary key in JPA."
+    },
+    {
+      "id": 17,
+      "question": "Which statement about @ManyToMany is true?",
+      "options": ["Creates a join table automatically", "Requires @PrimaryKeyJoinColumn", "Cannot be bidirectional", "Cannot have cascade"],
+      "answer": "A",
+      "explanation": "@ManyToMany automatically creates a join table if none is specified."
+    },
+    {
+      "id": 18,
+      "question": "What does @Version help with?",
+      "options": ["Caching", "Optimistic locking", "Query optimization", "Lazy loading"],
+      "answer": "B",
+      "explanation": "@Version is used for optimistic locking to handle concurrent modifications."
+    },
+    {
+      "id": 19,
+      "question": "Which of these causes N+1 problem?",
+      "options": ["EAGER fetch", "LAZY fetch on a collection", "saveAll()", "DataSource pooling"],
+      "answer": "B",
+      "explanation": "The N+1 problem typically occurs with lazy-loaded collections when each item is loaded individually."
+    },
+    {
+      "id": 20,
+      "question": "Which annotation is required for soft deletes?",
+      "options": ["@SoftDelete", "@Where", "@NotDeleted", "@Status"],
+      "answer": "B",
+      "explanation": "@Where is commonly used with Hibernate to implement soft deletes by filtering out 'deleted' entities."
+    },
+    {
+      "id": 21,
+      "question": "What does this JPQL do?\nSELECT p.name FROM Product p",
+      "options": ["Returns full entity", "Returns only names", "Throws exception", "Returns ID + name"],
+      "answer": "B",
+      "explanation": "This JPQL query returns a list of product names, not full entity objects."
+    },
+    {
+      "id": 22,
+      "question": "What is true about repository interfaces?",
+      "options": ["Must be annotated with @Component", "Must be class, not interface", "Automatically detected by Spring", "Must override all methods"],
+      "answer": "C",
+      "explanation": "Repository interfaces are automatically detected and implemented by Spring Data JPA at runtime."
+    },
+    {
+      "id": 23,
+      "question": "Which annotation marks the embeddable class?",
+      "options": ["@EmbedClass", "@Embeddable", "@Embedded", "@Embed"],
+      "answer": "B",
+      "explanation": "@Embeddable marks a class whose instances are stored as part of an owning entity."
+    },
+    {
+      "id": 24,
+      "question": "Which annotation marks a field inside an Entity that embeds another class?",
+      "options": ["@Embeddable", "@Embedded", "@SubComponent", "@JoinTable"],
+      "answer": "B",
+      "explanation": "@Embedded is used to specify a persistent field or property of an entity whose value is an instance of an embeddable class."
+    },
+    {
+      "id": 25,
+      "question": "What happens when you call save() with an existing ID?",
+      "options": ["Insert only", "Update only", "Merge", "Delete then insert"],
+      "answer": "C",
+      "explanation": "save() performs a merge operation when an entity with the same ID already exists in the persistence context."
+    },
+    {
+      "id": 26,
+      "question": "Which relationship usually requires a join table?",
+      "options": ["OneToOne", "ManyToOne", "ManyToMany", "OneToMany"],
+      "answer": "C",
+      "explanation": "@ManyToMany relationships typically use a join table to map the relationship between two entities."
+    },
+    {
+      "id": 27,
+      "question": "What happens if you delete a parent without cascade?",
+      "options": ["Child auto-deletes", "Child stays (or constraint error)", "Everything deletes", "App crashes"],
+      "answer": "B",
+      "explanation": "Without cascade, you'll typically get a constraint violation if there are child records, or the child records will remain if there's no constraint."
+    },
+    {
+      "id": 28,
+      "question": "What does flush() do?",
+      "options": ["Clear cache", "Synchronize persistence context with DB", "Close DB", "Delete all entities"],
+      "answer": "B",
+      "explanation": "flush() synchronizes the persistence context with the underlying database."
+    },
+    {
+      "id": 29,
+      "question": "Which is true about EntityManager?",
+      "options": ["Used internally by Spring Data", "Must be used manually", "Cannot write JPQL", "Cannot persist entities"],
+      "answer": "A",
+      "explanation": "Spring Data JPA internally uses EntityManager but typically abstracts it away from the developer."
+    },
+    {
+      "id": 30,
+      "question": "Which statement is true about JPQL?",
+      "options": ["Works on table names", "Works on entity names", "Works only with SQL functions", "Can modify schema"],
+      "answer": "B",
+      "explanation": "JPQL works with entity and field names, not database tables and columns."
+    }
+  ]
 }
