@@ -1,19 +1,19 @@
 {
-  "title": "Day 4 - JPA & Spring Data JPA",
-  "questions": [
+  "day": 4,
+  "basic": [
     {
       "id": 1,
       "question": "Which annotation marks a class as a JPA entity?",
       "options": ["@Table", "@Entity", "@Repository", "@Column"],
       "answer": "B",
-      "explanation": "@Entity is used to mark a class as a JPA entity, making it a persistent Java class."
+      "explanation": "The @Entity annotation marks a class as a JPA entity, making it ready for persistence in a database."
     },
     {
       "id": 2,
       "question": "What does @Id represent in an entity?",
       "options": ["Table name", "Primary key", "Foreign key", "Database sequence"],
       "answer": "B",
-      "explanation": "@Id annotation is used to specify the primary key of an entity."
+      "explanation": "The @Id annotation specifies the primary key of an entity."
     },
     {
       "id": 3,
@@ -27,35 +27,35 @@
       "question": "What does @GeneratedValue typically do?",
       "options": ["Validates fields", "Encrypts fields", "Auto-generates primary key values", "Creates new tables"],
       "answer": "C",
-      "explanation": "@GeneratedValue is used to automatically generate primary key values."
+      "explanation": "@GeneratedValue is used to specify the generation strategy for the primary key values."
     },
     {
       "id": 5,
       "question": "To map a field to a column with a custom name, you use:",
       "options": ["@Id", "@Column(name = \"custom_name\")", "@Entity", "@JoinColumn"],
       "answer": "B",
-      "explanation": "@Column annotation with name attribute is used to specify a custom column name."
+      "explanation": "The @Column annotation's name attribute allows you to specify a custom column name in the database."
     },
     {
       "id": 6,
       "question": "Which method is inherited from JpaRepository?",
       "options": ["save()", "fetch()", "make()", "build()"],
       "answer": "A",
-      "explanation": "save() is one of the CRUD methods provided by JpaRepository."
+      "explanation": "The save() method is one of the CRUD operations provided by JpaRepository."
     },
     {
       "id": 7,
-      "question": "Which relationship represents 'one customer has many orders'?",
+      "question": "Which relationship represents \"one customer has many orders\"?",
       "options": ["@OneToOne", "@ManyToMany", "@OneToMany", "@ManyToOne"],
       "answer": "C",
-      "explanation": "@OneToMany is used to define a one-to-many relationship where one entity (Customer) can have multiple instances of another entity (Order)."
+      "explanation": "@OneToMany is used to represent a one-to-many relationship between entities."
     },
     {
       "id": 8,
       "question": "@ManyToOne usually creates which DB column?",
       "options": ["Primary key", "Foreign key", "Unique key", "No key"],
       "answer": "B",
-      "explanation": "@ManyToOne creates a foreign key column in the database to maintain the relationship."
+      "explanation": "@ManyToOne creates a foreign key column in the database to establish the relationship."
     },
     {
       "id": 9,
@@ -66,7 +66,7 @@
     },
     {
       "id": 10,
-      "question": "If an entity lacks a no-args constructor, what happens?",
+      "question": "If an entity lacks a no‑args constructor, what happens?",
       "options": ["Runs fine", "JPA fails to create the entity", "Compiler error", "DB error"],
       "answer": "B",
       "explanation": "JPA requires a no-args constructor to instantiate entities through reflection."
@@ -76,28 +76,28 @@
       "question": "What is wrong with this entity?\n@Entity\npublic class Product {\n    private Long id;\n    private String name;\n}",
       "options": ["Missing @Service", "No @Id", "Wrong class name", "Too many fields"],
       "answer": "B",
-      "explanation": "The entity is missing the @Id annotation which is required to mark the primary key."
+      "explanation": "The entity is missing the @Id annotation on the id field, which is required for JPA entities."
     },
     {
       "id": 12,
       "question": "What does this repository extend?\npublic interface ProductRepo extends JpaRepository<Product, Long> {}",
       "options": ["ProductService", "JpaRepository", "CrudService", "EntityManager"],
       "answer": "B",
-      "explanation": "The repository extends JpaRepository which provides JPA related methods."
+      "explanation": "The repository extends JpaRepository which provides JPA specific methods."
     },
     {
       "id": 13,
       "question": "What's wrong in this code?\n@Entity\npublic class Item {\n    @Id\n    @GeneratedValue\n    private String id;\n}",
       "options": ["Missing @Service", "Cannot use String for @GeneratedValue", "Too many annotations", "Missing @Column"],
       "answer": "B",
-      "explanation": "@GeneratedValue with String type is not directly supported. It's typically used with numeric types."
+      "explanation": "@GeneratedValue is typically used with numeric types, not String."
     },
     {
       "id": 14,
       "question": "What does findAll() return?",
       "options": ["Single entity", "Optional", "List of entities", "JSON"],
       "answer": "C",
-      "explanation": "findAll() returns a List of entities from the database."
+      "explanation": "findAll() returns a List of entities of the specified type."
     },
     {
       "id": 15,
@@ -111,14 +111,14 @@
       "question": "JPA stands for:",
       "options": ["Java Persistence API", "Java Program Access", "Java Performance Annotation", "Java Persistence Authorization"],
       "answer": "A",
-      "explanation": "JPA stands for Java Persistence API, which is the standard API for object-relational mapping in Java."
+      "explanation": "JPA stands for Java Persistence API."
     },
     {
       "id": 17,
       "question": "Which annotation defines a table name?",
       "options": ["@Entity", "@Table", "@Column", "@Schema"],
       "answer": "B",
-      "explanation": "@Table annotation is used to specify the table name in the database."
+      "explanation": "The @Table annotation is used to specify the name of the database table."
     },
     {
       "id": 18,
@@ -132,56 +132,56 @@
       "question": "Which method retrieves one record by ID?",
       "options": ["get()", "find()", "findById()", "getOneById()"],
       "answer": "C",
-      "explanation": "findById() is used to retrieve an entity by its primary key."
+      "explanation": "findById() is used to retrieve an entity by its ID."
     },
     {
       "id": 20,
       "question": "@OneToOne means:",
       "options": ["One entity to many tables", "One record maps to itself", "One entity associated with exactly one other entity", "Not a valid relationship"],
       "answer": "C",
-      "explanation": "@OneToOne defines a single-valued association to another entity."
+      "explanation": "@OneToOne represents a one-to-one relationship between two entities."
     },
     {
       "id": 21,
       "question": "What does Optional<Product> mean in findById()?",
       "options": ["ID is optional", "Result may be absent", "Product is nullable", "Product always exists"],
       "answer": "B",
-      "explanation": "Optional indicates that the result might be empty if no entity is found."
+      "explanation": "Optional indicates that the result might be empty."
     },
     {
       "id": 22,
       "question": "Cascading is used for:",
       "options": ["Logging", "Automatic operations on related entities", "Schema creation", "REST calls"],
       "answer": "B",
-      "explanation": "Cascading allows operations to be propagated to associated entities."
+      "explanation": "Cascading allows operations to be propagated to related entities."
     },
     {
       "id": 23,
       "question": "Which annotation helps create foreign key automatically?",
       "options": ["@Column", "@JoinColumn", "@Foreign", "@Key"],
       "answer": "B",
-      "explanation": "@JoinColumn is used to specify the foreign key column for relationships."
+      "explanation": "@JoinColumn is used to specify the foreign key column."
     },
     {
       "id": 24,
       "question": "What does the following mean?\n@OneToMany(mappedBy = \"customer\")",
       "options": ["Customer is child", "Customer is owning side", "Orders contain foreign key", "Customer table has foreign key"],
       "answer": "C",
-      "explanation": "mappedBy indicates that the 'customer' field in the target entity owns the relationship."
+      "explanation": "mappedBy indicates that the other side (Order) owns the relationship and contains the foreign key."
     },
     {
       "id": 25,
       "question": "JPQL stands for:",
       "options": ["Java Persistence Query Language", "Java Program Query Language", "Joint Persistence Query Layer", "JDBC Persistence Query Layer"],
       "answer": "A",
-      "explanation": "JPQL is Java Persistence Query Language, used to make queries against entities."
+      "explanation": "JPQL stands for Java Persistence Query Language."
     },
     {
       "id": 26,
       "question": "Which annotation prevents null values?",
       "options": ["@NotNull", "@NoNull", "@Required", "@CheckNull"],
       "answer": "A",
-      "explanation": "@NotNull is a validation constraint that ensures the value is not null."
+      "explanation": "@NotNull is used to validate that the annotated field is not null."
     },
     {
       "id": 27,
@@ -195,14 +195,14 @@
       "question": "The default fetch type for @ManyToOne is:",
       "options": ["LAZY", "EAGER", "NONE", "DELAYED"],
       "answer": "B",
-      "explanation": "@ManyToOne relationships are eagerly fetched by default."
+      "explanation": "@ManyToOne has EAGER fetch type by default."
     },
     {
       "id": 29,
       "question": "The default fetch type for @OneToMany is:",
       "options": ["EAGER", "LAZY", "LOAD_ONCE", "INLINE"],
       "answer": "B",
-      "explanation": "@OneToMany relationships are lazily fetched by default."
+      "explanation": "@OneToMany has LAZY fetch type by default."
     },
     {
       "id": 30,
@@ -211,5 +211,6 @@
       "answer": "C",
       "explanation": "Spring Data JPA supports custom queries using JPQL or the @Query annotation."
     }
-  ]
+  ],
+  "advanced": []
 }
